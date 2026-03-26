@@ -11,3 +11,9 @@
 # Existence of Passenger boogies can be checked
 # Boogie details are displayed
 ============
+# UC3-TrackUniqueBogieIDs
+# User adds bogie IDs
+# System inserts into Hashset
+# Duplicates are ignored
+# Unique IDs are displayed
+============
