@@ -17,3 +17,9 @@
 # Duplicates are ignored
 # Unique IDs are displayed
 ============
+# UC4-MaintainOrderedBogieIDs (TreeSet & SortedSet)
+# User adds bogie IDs
+# System inserts into Hashset
+# Duplicates are ignored
+# Unique IDs are displayed
+============
