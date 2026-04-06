@@ -28,3 +28,11 @@
 # LinkedHashSet stores them
 # Formation is printed in original order
 ============
+# UC6-ReservationConfirmationandRoomAllocation
+# User creates a bogie-capacity mapping.
+# System stores bogie names as keys and capacities as values.
+# Entries are inserted into a HashMap.
+# System iterates through the map.
+# Capacity details are displayed for each bogie.
+# Program continues.
+============
