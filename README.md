@@ -23,3 +23,8 @@
 # Duplicates are ignored
 # Unique IDs are displayed
 ============
+# UC5-PreserveInsertionOrder (LinkedHashSet)
+# User adds bogie 
+# LinkedHashSet stores them
+# Formation is printed in original order
+============
