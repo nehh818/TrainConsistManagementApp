@@ -1,23 +1,22 @@
 /*
 MAIN CLASS - TrainConsistManagementApp
 
-* Use Case 9: Group Bogies by Type
+* Use Case 10: Count Total Seats in Train
 
 * Description:
-* This class groups similar bogies together using
-* Java Stream Collectors.groupingBy().
+* This class aggregates seating capacity of all bogies
+* into a single total using Stream reduce().
 
 * At this stage, the application:
-* - Creates a List of bogies
-* - Streams the List
-* - Groups bogies by name
-* - Stores grouped data in a Map
-* - Displays grouped structure
+* - Creates bogie List
+* - Maps bogies to capacity
+* - Reduces values into total
+* - Displays total seat count
 
-* This maps classification logic using groupingBy.
+* This maps aggregation Logic using reduce().
 
 * @author Neha D
-* @version 9.0
+* @version 10.0
 */
 
 import java.util.*;
@@ -32,8 +31,8 @@ class Bogie {
         this.capacity = capacity;
     }
 
-    public String getType() {
-        return type;
+    public int getCapacity() {
+        return capacity;
     }
 
     @Override
@@ -44,27 +43,21 @@ class Bogie {
 
 public class TrainConsistManagementApp {
     public static void main(String[] args) {
-        // Step 1: Create a list of bogies (Passenger + Goods)
+
         List<Bogie> bogies = Arrays.asList(
                 new Bogie("Sleeper", 72),
                 new Bogie("AC Chair", 56),
                 new Bogie("First Class", 24),
-                new Bogie("Sleeper", 70),
-                new Bogie("AC Chair", 60)
+                new Bogie("Sleeper", 70)
         );
 
-        System.out.println("All Bogies:");
+        System.out.println("Bogies in Train:");
         bogies.forEach(System.out::println);
 
-        // Step 2: Group bogies by type using Collectors.groupingBy
-        Map<String, List<Bogie>> groupedBogies = bogies.stream()
-                .collect(Collectors.groupingBy(Bogie::getType));
+        int totalSeats = bogies.stream()
+                .map(Bogie::getCapacity)
+                .reduce(0, Integer::sum);
 
-        // Step 3: Display grouped bogies
-        System.out.println("\nGrouped Bogies:");
-        groupedBogies.forEach((type, bogieList) -> {
-            System.out.println(type + ":");
-            bogieList.forEach(b -> System.out.println("  " + b));
-        });
+        System.out.println("\nTotal Seating Capacity of Train: " + totalSeats);
     }
 }
